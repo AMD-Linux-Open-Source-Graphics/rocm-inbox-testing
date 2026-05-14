@@ -1,0 +1,14 @@
+# Copyright Advanced Micro Devices, Inc.
+#
+# SPDX-License-Identifier: MIT
+
+name = "rocSOLVER"
+interface = "gtest"
+supported_isas = [1201]
+extra_args = []
+binary_name = "rocsolver-test"
+
+[ubuntu]
+test_package_name = "librocsolver0-tests"
+test_debug_package_names = ["librocsolver0-tests-dbgsym", "librocsolver0-dbgsym", "libhsa-runtime64-1-dbgsym", "libamdhip64-7-dbgsym", "libamd-comgr3-dbgsym"]
+test_binary_path = "/usr/libexec/rocm/librocsolver0-tests/"

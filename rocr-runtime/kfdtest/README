@@ -1,0 +1,8 @@
+This test is _very_ naive
+
+the script used to set gtest filters and actually run the test binary only outputs the exit code and there is no
+easy way to change that.
+
+In the interest of getting this running ASAP, test failures WILL NOT cause this test to fail.
+
+YOU WILL NEED TO MANUALLY CHECK THE OUTPUT TO KNOW IF THE TEST PASSED OR FAILED

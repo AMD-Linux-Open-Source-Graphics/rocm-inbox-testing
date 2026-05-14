@@ -1,0 +1,14 @@
+# Copyright Advanced Micro Devices, Inc.
+# Copyright (c) 2023, 2024 Red Hat, Inc.
+#
+# SPDX-License-Identifier: MIT
+
+summary: upstream test suite for rocrand
+test: testrig check && testrig run
+framework: shell
+duration: 60m
+contact: Tim Flink <Tim.Flink@amd.com>
+tag:
+  - rocrand
+  - upstream
+  - selftest

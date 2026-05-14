@@ -1,0 +1,12 @@
+# Copyright Advanced Micro Devices, Inc.
+#
+# SPDX-License-Identifier: MIT
+
+name = "rocPRIM"
+supported_isas = [1201]
+extra_args = []
+
+[ubuntu]
+test_package_name = "librocprim-tests"
+test_debug_package_names = ["librocprim-tests-dbgsym", "libhsa-runtime64-1-dbgsym", "libamd-comgr3-dbgsym"]
+test_binary_path = "/usr/libexec/rocm/librocprim-tests/"

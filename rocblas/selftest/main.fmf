@@ -1,0 +1,23 @@
+# Copyright Advanced Micro Devices, Inc.
+#
+# SPDX-License-Identifier: MIT
+
+summary: upstream test suite for rocblas
+test: testrig check && testrig run
+framework: shell
+duration: 6h
+contact: Tim Flink <Tim.Flink@amd.com>
+prepare:
+  - name: install debian-like packages
+    when: ansible_os_family == Debian
+    how: install
+    package: librocblas5-tests
+  - name: install fedora-like packages
+    when: ansible_os_family == RedHat
+    how: install
+    package: rocblas-test
+tag:
+  - rocblas
+  - upstream
+  - selftest
+

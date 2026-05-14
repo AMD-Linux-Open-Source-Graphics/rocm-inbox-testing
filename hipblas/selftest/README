@@ -1,0 +1,4 @@
+This is a beakerlib implementation of running the upstream test suite for rocblas
+
+If you're running this test not as root or in a container, you will need to install rocblas-test from the
+tflink/rocm-next-test COPR

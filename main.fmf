@@ -1,0 +1,6 @@
+# Copyright Advanced Micro Devices, Inc.
+#
+# SPDX-License-Identifier: MIT
+
+summary: testsuite for ROCm
+contact: Tim Flink <Tim.Flink@amd.com>

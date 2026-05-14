@@ -1,0 +1,12 @@
+# Copyright Advanced Micro Devices, Inc.
+#
+# SPDX-License-Identifier: MIT
+
+name = "hipSPARSE"
+supported_isas = [1201]
+extra_args = []
+
+[ubuntu]
+test_package_name = "libhipsparse4-tests"
+test_debug_package_names = ["libhipsparse4-tests-dbgsym", "libhipsparse4-dbgsym", "librocsparse1-dbgsym", "libhsa-runtime64-1-dbgsym", "libamdhip64-7-dbgsym", "libamd-comgr3-dbgsym"]
+test_binary_path = "/usr/libexec/rocm/libhipsparse4-tests/"

@@ -1,0 +1,14 @@
+# Copyright Advanced Micro Devices, Inc.
+#
+# SPDX-License-Identifier: MIT
+
+summary: upstream test suite for MIOpen
+test: testrig check && testrig run
+framework: shell
+duration: 2h
+contact: Tim Flink <Tim.Flink@amd.com>
+tag:
+  - miopen
+  - upstream
+  - selftest
+

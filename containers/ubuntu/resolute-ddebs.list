@@ -1,0 +1,5 @@
+Types: deb
+URIs: http://ddebs.ubuntu.com/
+Suites: resolute resolute-updates resolute-proposed 
+Components: main restricted universe multiverse
+Signed-by: /usr/share/keyrings/ubuntu-dbgsym-keyring.gpg

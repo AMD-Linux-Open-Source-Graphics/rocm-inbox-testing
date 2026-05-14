@@ -1,0 +1,12 @@
+# Copyright Advanced Micro Devices, Inc.
+#
+# SPDX-License-Identifier: MIT
+
+summary: build and run rocm-examples
+test: ./runtest.sh
+framework: beakerlib
+duration: 4h
+contact: Tim Flink <Tim.Flink@amd.com>
+tag:
+  - rocm
+

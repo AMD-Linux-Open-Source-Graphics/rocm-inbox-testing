@@ -1,0 +1,15 @@
+# Copyright Advanced Micro Devices, Inc.
+#
+# SPDX-License-Identifier: MIT
+
+summary: kfdtest
+test: bash run_naive_kfdtest.sh
+framework: shell
+duration: 1h
+contact: Tim Flink <Tim.Flink@amd.com>
+tag:
+  - kfdtest
+  - runtime
+  - selftest
+  - application
+

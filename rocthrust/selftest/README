@@ -1,0 +1,9 @@
+This is a beakerlib implementation of getting, compiling and running the upstream test suite for rocRAND.
+
+If you're running this test not as root, you will need to run `dnf -y builddep rocrand`
+
+You will need to install the following packages to run the tests
+ - git
+ - beakerlib
+ - gtest
+

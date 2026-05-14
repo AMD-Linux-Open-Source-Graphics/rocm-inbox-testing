@@ -1,0 +1,12 @@
+# Copyright Advanced Micro Devices, Inc.
+#
+# SPDX-License-Identifier: MIT
+
+name = "RCCL"
+supported_isas = [1201]
+extra_args = []
+
+[ubuntu]
+test_package_name = "librccl1-tests"
+test_debug_package_names = ["librccl1-tests-dbgsym", "librccl1-dbgsym", "libhsa-runtime64-1-dbgsym", "libamdhip64-7-dbgsym", "libamd-comgr3-dbgsym"]
+test_binary_path = "/usr/libexec/rocm/librccl1-tests/"

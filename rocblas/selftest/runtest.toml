@@ -1,0 +1,12 @@
+# Copyright Advanced Micro Devices, Inc.
+#
+# SPDX-License-Identifier: MIT
+
+name = "rocBLAS"
+supported_isas = [1201]
+extra_args = []
+
+[ubuntu]
+test_package_name = "librocblas5-tests"
+test_debug_package_names = ["librocblas5-tests-dbgsym", "librocblas5-dbgsym", "libhsa-runtime64-1-dbgsym", "libamdhip64-7-dbgsym", "libamd-comgr3-dbgsym"]
+test_binary_path = "/usr/libexec/rocm/librocblas5-tests/"

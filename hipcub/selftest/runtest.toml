@@ -1,0 +1,12 @@
+# Copyright Advanced Micro Devices, Inc.
+#
+# SPDX-License-Identifier: MIT
+
+name = "hipCUB"
+supported_isas = [1201]
+extra_args = []
+
+[ubuntu]
+test_package_name = "libhipcub-tests"
+test_debug_package_names = ["libhipcub-tests-dbgsym", "libhsa-runtime64-1-dbgsym", "libamdhip64-7-dbgsym", "libamd-comgr3-dbgsym"]
+test_binary_path = "/usr/libexec/rocm/libhipcub-tests/"

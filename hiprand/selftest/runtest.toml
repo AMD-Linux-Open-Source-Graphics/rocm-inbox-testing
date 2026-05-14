@@ -1,0 +1,11 @@
+# Copyright Advanced Micro Devices, Inc.
+#
+# SPDX-License-Identifier: MIT
+
+name = "hipRAND"
+supported_isas = [1201]
+
+[ubuntu]
+test_package_name = "libhiprand1-tests"
+test_debug_package_names = ["libhiprand1-tests-dbgsym", "libhiprand1-dbgsym", "librocrand1-dbgsym", "libhsa-runtime64-1-dbgsym", "libamdhip64-7-dbgsym", "libamd-comgr3-dbgsym"]
+test_binary_path = "/usr/libexec/rocm/libhiprand1-tests/"

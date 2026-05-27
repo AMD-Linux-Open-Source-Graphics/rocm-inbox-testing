@@ -13,15 +13,26 @@
 # check for ROCMTESTTAG env var to know which tests we're supposed to run
 if [ -z $ROCMTESTTAG ];
 then
-    echo "the ENV variable \$ROCMTESTTAG must be set"
-    exit 1
+    echo "by default, the entire selftest suite will be run. This can take over 12 hours"
+    echo "to run a subset of the suite, set the ENV variable \$ROCMTESTTAG at runtime"
+    echo "waiting 10 seconds before starting execution"
+    wait 10
+    export ROCMTESTTAG="selftest"
 fi
 
 echo "running tests with tag '$ROCMTESTTAG'"
 
-# HACK - tmt isn't installable with python 3.14 right now, this will need to be removed later
-source /opt/localtesting/env_tmt/bin/activate
+if [ -z /usr/bin/tmt ];
+then
+    echo "tmt is not installed. make sure it is installed at /usr/bin/tmt before running this script"
+    exit 1
+fi
+
+if [ -z /usr/bin/testrig ];
+then
+    echo "testrig is not installed. make sure it is installed at /usr/bin/tmt before running this script"
+    exit 1
+fi
 
 tmt run test -f tag:$ROCMTESTTAG provision -h local --feeling-safe discover -h fmf execute -h tmt
 
-deactivate

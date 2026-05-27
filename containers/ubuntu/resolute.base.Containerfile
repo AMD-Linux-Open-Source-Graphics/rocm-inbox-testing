@@ -38,7 +38,7 @@ RUN echo "installing base utils"; apt-get install -y git vim bash ubuntu-dbgsym-
 # enable ubuntu archive debug repos
 ############################################################
 
-COPY containers/resolute-ddebs.list /etc/apt/sources.list.d/ddebs.sources
+COPY resolute-ddebs.list /etc/apt/sources.list.d/ddebs.sources
 RUN echo "updating apt metadata with debug"; apt-get update
 
 ############################################################

@@ -5,7 +5,6 @@
 
 name = "rocFFT"
 supported_isas = [1201]
-#extra_args = ["--smoketest"]
 extra_args = []
 
 [ubuntu]

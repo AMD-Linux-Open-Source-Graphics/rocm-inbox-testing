@@ -62,4 +62,4 @@ RUN echo "cleaning apt metadata"; apt-get clean && rm -rf /var/lib/apt/lists/*
 ############################################################
 
 WORKDIR /opt/rocm-inbox-testing
-CMD ["/usr/bin/bash"]
+CMD ["/usr/bin/bash","/opt/rocm-inbox-testing/run_tests.sh"]

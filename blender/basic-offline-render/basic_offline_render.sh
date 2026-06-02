@@ -15,8 +15,9 @@ set -e
 apt-get install -y blender wget unzip hipcc
 
 if [ ! -e classroom.zip ]; then
-    echo "Downloading classroom.zip"
+    echo "Downloading classroom.zip to $(pwd)"
     wget --continue https://download.blender.org/demo/test/classroom.zip
+    unzip classroom.zip
 else
     echo "classroom.zip already exists"
 fi

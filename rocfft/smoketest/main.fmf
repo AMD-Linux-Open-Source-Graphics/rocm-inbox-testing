@@ -1,0 +1,13 @@
+# Copyright Advanced Micro Devices, Inc.
+# Copyright (c) 2023, 2024 Red Hat, Inc.
+#
+# SPDX-License-Identifier: MIT
+
+summary: smoketest rocfft
+test: testrig check && testrig run
+framework: shell
+duration: 20m
+contact: Tim Flink <Tim.Flink@amd.com>
+tag:
+  - smoketest
+

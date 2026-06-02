@@ -1,0 +1,163 @@
+execute:
+  how: tmt
+provision:
+  how: local
+discover:
+  how: fmf
+/blender:
+  discover+:
+    test: /blender
+  prepare:
+    - how: install
+      package:
+        - blender
+        - wget
+        - unzip
+        - hipcc
+/hipblas:
+  discover+:
+    test: /hipblas
+  prepare:
+    how: install
+    when: distro == ubuntu OR distro == debian
+    package:
+      - libhipblas3-tests
+/hipcub:
+  discover+:
+    test: /hipcub
+  prepare:
+    how: install
+    when: distro == ubuntu OR distro == debian
+    package:
+      - libhipcub-tests
+/hipfft:
+  discover+:
+    test: /hipfft
+  prepare:
+    how: install
+    when: distro == ubuntu OR distro == debian
+    package:
+      - libhipfft0-tests
+/hiprand:
+  discover+:
+    test: /hiprand
+  prepare:
+    how: install
+    when: distro == ubuntu OR distro == debian
+    package:
+      - libhiprand1-tests
+/hipsolver:
+  discover+:
+    test: /hipsolver
+  prepare:
+    how: install
+    when: distro == ubuntu OR distro == debian
+    package:
+      - libhipsolver1-tests
+/hipsparse:
+  discover+:
+    test: /hipsparse
+  prepare:
+    how: install
+    when: distro == ubuntu OR distro == debian
+    package:
+      - libhipsparse4-tests
+/llama.cpp:
+  discover+:
+    test: /llama.cpp
+  prepare:
+    how: install
+    when: distro == ubuntu OR distro == debian
+    package:
+      - llama.cpp
+      - libggml0-backend-hip
+/miopen:
+  discover+:
+    test: /miopen
+  prepare:
+    how: install
+    when: distro == ubuntu OR distro == debian
+    package:
+      - libmiopen1-tests
+/rccl:
+  discover+:
+    test: /rccl
+  prepare:
+    how: install
+    when: distro == ubuntu OR distro == debian
+    package:
+      - librccl1-tests
+/rocblas:
+  discover+:
+    test: /rocblas
+  prepare:
+    how: install
+    when: distro == ubuntu OR distro == debian
+    package:
+      - librocblas5-tests
+/rocfft:
+  discover+:
+    test: /rocfft
+  prepare:
+    how: install
+    when: distro == ubuntu OR distro == debian
+    package:
+      - librocfft0-tests
+/rocprim:
+  discover+:
+    test: /rocprim
+  prepare:
+    how: install
+    when: distro == ubuntu OR distro == debian
+    package:
+      - librocprim-tests
+/rocr-runtime:
+  discover+:
+    test: /rocr-runtime
+  prepare:
+    how: install
+    when: distro == ubuntu OR distro == debian
+    package:
+      - libhsa-runtime-dev
+      - libhsakmt-dev
+      - libdrm-dev
+      - libnuma-dev
+      - cmake
+      - build-essential
+      - hipcc
+      - pkg-config
+/rocrand:
+  discover+:
+    test: /rocrand
+  prepare:
+    how: install
+    when: distro == ubuntu OR distro == debian
+    package:
+      - librocrand1-tests
+/rocsolver:
+  discover+:
+    test: /rocsolver
+  prepare:
+    how: install
+    when: distro == ubuntu OR distro == debian
+    package:
+      - librocsolver0-tests
+/rocsparse:
+  discover+:
+    test: /rocsparse
+  prepare:
+    how: install
+    when: distro == ubuntu OR distro == debian
+    package:
+      - librocsparse1-tests
+/rocthrust:
+  discover+:
+    test: /rocthrust
+  prepare:
+    how: install
+    when: distro == ubuntu OR distro == debian
+    package:
+      - librocthrust-tests
+#report:
+#  how: html
+summary: Individual ROCm Component Tests

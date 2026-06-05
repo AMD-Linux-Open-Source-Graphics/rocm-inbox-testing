@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: MIT
 
 summary: upstream test suite for rocfft
-test: testrig check && testrig run
+test: testrig check && testrig run --no-debug
 require: librocfft0-tests
 framework: shell
 duration: 4h

@@ -12,6 +12,7 @@ set -e
 ################################################################################
 
 # ensure packages are installed
+apt-get update
 apt-get install -y blender wget unzip hipcc
 
 if [ ! -e classroom.zip ]; then

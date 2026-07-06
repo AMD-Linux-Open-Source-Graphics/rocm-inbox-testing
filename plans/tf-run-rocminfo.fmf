@@ -1,0 +1,20 @@
+execute:
+  how: tmt
+
+provision:
+  how: container
+  image: fedora:latest
+  expose-device:
+    - /dev/dri
+    - /dev/kfd
+
+discover:
+  how: fmf
+  test:
+    - rocminfo/basic
+
+prepare:
+  - how: install
+    package:
+      - rocminfo
+

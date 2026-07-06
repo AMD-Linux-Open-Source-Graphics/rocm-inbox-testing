@@ -1,0 +1,12 @@
+# Copyright Advanced Micro Devices, Inc.
+#
+# SPDX-License-Identifier: MIT
+
+summary: basic rocminfo run to gather data
+test: rocminfo
+framework: shell
+duration: 30m
+contact: Tim Flink <Tim.Flink@amd.com>
+tag:
+  - rocminfo
+

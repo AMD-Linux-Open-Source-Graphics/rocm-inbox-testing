@@ -10,3 +10,8 @@ extra_args = []
 test_package_name = "librocsparse1-tests"
 test_debug_package_names = ["librocsparse1-tests-dbgsym", "librocsparse1-dbgsym", "libhsa-runtime64-1-dbgsym", "libamdhip64-7-dbgsym", "libamd-comgr3-dbgsym"]
 test_binary_path = "/usr/libexec/rocm/librocsparse1-tests/"
+
+[fedora]
+test_package_name = "rocsparse-test"
+test_debug_package_names = ["rocsparse-tests-debuginfo", "rocsparse-debuginfo", "rocm-runtime-debuginfo", "rocm-comgr-debuginfo", "rocm-hip-debuginfo"]
+test_binary_path = "/usr/bin/"

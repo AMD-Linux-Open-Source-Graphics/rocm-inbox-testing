@@ -10,3 +10,8 @@ extra_args = []
 test_package_name = "librocprim-tests"
 test_debug_package_names = ["librocprim-tests-dbgsym", "libhsa-runtime64-1-dbgsym", "libamd-comgr3-dbgsym"]
 test_binary_path = "/usr/libexec/rocm/librocprim-tests/"
+
+[fedora]
+test_package_name = "rocprim-test"
+test_debug_package_names = ["rocprim-tests-debuginfo", "rocprim-debuginfo", "rocm-runtime-debuginfo", "rocm-comgr-debuginfo", "rocm-hip-debuginfo"]
+test_binary_path = "/usr/bin/"

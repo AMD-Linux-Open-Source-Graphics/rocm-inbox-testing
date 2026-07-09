@@ -10,3 +10,8 @@ extra_args = []
 test_package_name = "librocthrust-tests"
 test_debug_package_names = ["librocthrust-tests-dbgsym", "librocthrust-dbgsym", "libhsa-runtime64-1-dbgsym", "libamdhip64-7-dbgsym", "libamd-comgr3-dbgsym"]
 test_binary_path = "/usr/libexec/rocm/librocthrust-tests/"
+
+[fedora]
+test_package_name = "rocthrust-test"
+test_debug_package_names = ["rocthrust-tests-debuginfo", "rocthrust-debuginfo", "rocm-runtime-debuginfo", "rocm-comgr-debuginfo", "rocm-hip-debuginfo"]
+test_binary_path = "/usr/bin/"

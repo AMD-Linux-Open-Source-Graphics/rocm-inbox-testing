@@ -10,3 +10,8 @@ extra_args = []
 test_package_name = "libhipcub-tests"
 test_debug_package_names = ["libhipcub-tests-dbgsym", "libhsa-runtime64-1-dbgsym", "libamdhip64-7-dbgsym", "libamd-comgr3-dbgsym"]
 test_binary_path = "/usr/libexec/rocm/libhipcub-tests/"
+
+[fedora]
+test_package_name = "hipcub-test"
+test_debug_package_names = ["hipcub-test-debuginfo", "rocm-runtime-debuginfo", "rocm-comgr-debuginfo", "rocm-hip-debuginfo"]
+test_binary_path = "/usr/bin/"

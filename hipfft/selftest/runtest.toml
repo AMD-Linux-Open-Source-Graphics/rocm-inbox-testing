@@ -10,3 +10,8 @@ extra_args = []
 test_package_name = "libhipfft0-tests"
 test_debug_package_names = ["libhipfft0-tests-dbgsym", "libhipfft0-dbgsym", "librocfft0-dbgsym", "libhsa-runtime64-1-dbgsym", "libamdhip64-7-dbgsym", "libamd-comgr3-dbgsym"]
 test_binary_path = "/usr/libexec/rocm/libhipfft0-tests/"
+
+[fedora]
+test_package_name = "hipfft-test"
+test_debug_package_names = ["hipfft-test-debuginfo", "hipfft-debuginfo", "rocfft-debuginfo", "rocm-runtime-debuginfo", "rocm-comgr-debuginfo", "rocm-hip-debuginfo"]
+test_binary_path = "/usr/bin/"

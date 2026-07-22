@@ -9,7 +9,7 @@ In order to run the tests in this repository, the following tools are required i
 
  * [tmt](https://github.com/teemtee/tmt)
  * [fmf](https://github.com/teemtee/fmf)
- * [testrig](https://github.com/AMD-Linux-Open-Source-Graphics/testrig)
+ * [testrig](https://github.com/AMD-Linux-Open-Source-Graphics/testrig) (>= 0.0.7)
 
 ## Running tests
 

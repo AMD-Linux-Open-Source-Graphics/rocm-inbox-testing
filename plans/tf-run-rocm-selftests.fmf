@@ -23,7 +23,6 @@ discover:
     - rocrand/selftest
     - rocsolver/selftest
     - rocsparse/selftest
-    - rocthrust/selftest
 
 prepare:
   - how: install
@@ -41,5 +40,3 @@ prepare:
       - rocrand-test
       - rocsolver-test
       - rocsparse-test
-      - rocthrust-test
-

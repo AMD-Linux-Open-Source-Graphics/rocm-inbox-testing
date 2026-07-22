@@ -1,0 +1,19 @@
+execute:
+  how: tmt
+
+provision:
+  how: container
+  image: docker.io/tflink/rocm-inbox-testing-fedora-base:rawhide
+  expose-device:
+    - /dev/dri
+    - /dev/kfd
+
+discover:
+  how: fmf
+  test:
+    - rocfft/smoketest
+
+prepare:
+  - how: install
+    package:
+      - rocfft-test

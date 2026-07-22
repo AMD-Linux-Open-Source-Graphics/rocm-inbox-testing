@@ -1,0 +1,45 @@
+execute:
+  how: tmt
+
+provision:
+  how: container
+  image: docker.io/tflink/rocm-inbox-testing-fedora-base:rawhide
+  expose-device:
+    - /dev/dri
+    - /dev/kfd
+
+discover:
+  how: fmf
+  test:
+    - hipblas/selftest
+    - hipcub/selftest
+    - hipfft/selftest
+    - hiprand/selftest
+    - hipsolver/selftest
+    - hipsparse/selftest
+    - rocblas/selftest
+    - rocfft/selftest
+    - rocprim/selftest
+    - rocrand/selftest
+    - rocsolver/selftest
+    - rocsparse/selftest
+    - rocthrust/selftest
+
+prepare:
+  - how: install
+    package:
+      - rocminfo
+      - hipblas-test
+      - hipcub-test
+      - hipfft-test
+      - hiprand-test
+      - hipsolver-test
+      - hipsparse-test
+      - rocblas-test
+      - rocfft-test
+      - rocprim-test
+      - rocrand-test
+      - rocsolver-test
+      - rocsparse-test
+      - rocthrust-test
+

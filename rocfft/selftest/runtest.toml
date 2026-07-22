@@ -11,8 +11,10 @@ extra_args = []
 test_package_name = "librocfft0-tests"
 test_debug_package_names = ["librocfft0-tests-dbgsym", "librocfft0-dbgsym", "libhsa-runtime64-1-dbgsym", "libamdhip64-7-dbgsym", "libamd-comgr3-dbgsym"]
 test_binary_path = "/usr/libexec/rocm/librocfft0-tests/"
+test_binaries = ["rocfft-test"]
 
 [fedora]
 test_package_name = "rocfft-test"
 test_debug_package_names = ["rocfft-tests-debuginfo", "rocfft-debuginfo", "rocm-runtime-debuginfo", "rocm-comgr-debuginfo", "rocm-hip-debuginfo"]
 test_binary_path = "/usr/bin/"
+test_binaries = ["rocfft-test"]

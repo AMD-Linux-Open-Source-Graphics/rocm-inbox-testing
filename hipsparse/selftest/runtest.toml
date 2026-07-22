@@ -10,8 +10,11 @@ extra_args = []
 test_package_name = "libhipsparse4-tests"
 test_debug_package_names = ["libhipsparse4-tests-dbgsym", "libhipsparse4-dbgsym", "librocsparse1-dbgsym", "libhsa-runtime64-1-dbgsym", "libamdhip64-7-dbgsym", "libamd-comgr3-dbgsym"]
 test_binary_path = "/usr/libexec/rocm/libhipsparse4-tests/"
+test_binaries = ["hipsparse-test"]
+extra_env_var = {HIPSOLVER_TEST_DATA = "/usr/share/libhipsolver4-tests/data"}
 
 [fedora]
 test_package_name = "hipsparse-test"
 test_debug_package_names = ["hipsparse-test-debuginfo", "hipsparse-debuginfo", "rocsparse-debuginfo", "rocm-runtime-debuginfo", "rocm-comgr-debuginfo", "rocm-hip-debuginfo"]
 test_binary_path = "/usr/bin/"
+test_binaries = ["hipsparse-test"]

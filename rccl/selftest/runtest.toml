@@ -10,8 +10,10 @@ extra_args = []
 test_package_name = "librccl1-tests"
 test_debug_package_names = ["librccl1-tests-dbgsym", "librccl1-dbgsym", "libhsa-runtime64-1-dbgsym", "libamdhip64-7-dbgsym", "libamd-comgr3-dbgsym"]
 test_binary_path = "/usr/libexec/rocm/librccl1-tests/"
+test_binaries = ["all_gather_perf", "all_reduce_bias_perf", "all_reduce_perf", "alltoall_perf", "alltoallv_perf", "broadcast_perf", "gather_perf", "hypercube_perf", "reduce_perf", "reduce_scatter_perf", "scatter_perf", "sendrecv_perf"]
 
 [fedora]
 test_package_name = "rccl-tests"
 test_debug_package_names = ["rccl-tests-debuginfo", "rccl-debuginfo", "rocm-runtime-debuginfo", "rocm-comgr-debuginfo", "rocm-hip-debuginfo"]
 test_binary_path = "/usr/bin/"
+test_binaries = ["all_gather_perf", "all_reduce_bias_perf", "all_reduce_perf", "alltoall_perf", "alltoallv_perf", "broadcast_perf", "gather_perf", "hypercube_perf", "reduce_perf", "reduce_scatter_perf", "scatter_perf", "sendrecv_perf"]

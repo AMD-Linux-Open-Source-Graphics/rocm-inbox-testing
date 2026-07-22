@@ -10,8 +10,10 @@ extra_args = []
 test_package_name = "libhipblas3-tests"
 test_debug_package_names = ["libhipblas3-tests-dbgsym", "libhipblas3-dbgsym", "librocblas5-dbgsym", "libhsa-runtime64-1-dbgsym", "libamdhip64-7-dbgsym", "libamd-comgr3-dbgsym"]
 test_binary_path = "/usr/libexec/rocm/libhipblas3-tests/"
+test_binaries = ["hipblas-test"]
 
 [fedora]
 test_package_name = "hipblas-test"
 test_debug_package_names = ["hipblas-test-debuginfo", "hipblas-debuginfo", "rocblas-debuginfo", "rocm-runtime-debuginfo", "rocm-comgr-debuginfo", "rocm-hip-debuginfo"]
 test_binary_path = "/usr/bin/"
+test_binaries = ["hipblas-test"]

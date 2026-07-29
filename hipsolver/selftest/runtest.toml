@@ -11,7 +11,7 @@ test_package_name = "libhipsolver1-tests"
 test_debug_package_names = ["libhipsolver1-tests-dbgsym", "libhipsolver1-dbgsym", "librocsolver0-dbgsym", "libhsa-runtime64-1-dbgsym", "libamdhip64-7-dbgsym", "libamd-comgr3-dbgsym"]
 test_binary_path = "/usr/libexec/rocm/libhipsolver1-tests/"
 test_binaries = ["hipsolver-test"]
-extra_env_var = {HIPSOLVER_TEST_DATA = "/usr/share/libhipsolver4-tests/data"}
+extra_env_var = {HIPSOLVER_TEST_DATA = "/usr/share/libhipsolver1-tests/data"}
 
 [fedora]
 test_package_name = "hipsolver-test"

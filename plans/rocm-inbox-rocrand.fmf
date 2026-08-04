@@ -1,0 +1,13 @@
+execute:
+  how: tmt
+
+discover:
+  how: fmf
+  test:
+    - rocfft/smoketest
+
+prepare:
+  - how: install
+    when: distro == ubuntu
+    package:
+      - librocrand1-tests

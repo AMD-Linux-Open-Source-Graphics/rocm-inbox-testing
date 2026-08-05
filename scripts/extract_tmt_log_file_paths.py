@@ -35,14 +35,17 @@ def find_plan_execute_result_files(tmt_run_dir):
     return result_yaml_files
 
 
-def parse_result_file(result_yaml_file_path):
+def parse_result_file(result_yaml_relative_path, tmt_run_dir):
+    result_yaml_path = os.path.join(tmt_run_dir, "plans", result_yaml_relative_path)
     yaml = YAML(typ="safe")
-    with open(result_yaml_file_path, "r") as f:
+    with open(result_yaml_path, "r") as f:
         yaml_docs = yaml.load(f)
 
     yaml_doc = yaml_docs[0]
 
+
     return {
+        "base_dir": tmt_run_dir,
         "logs": yaml_doc["log"],
         "name": yaml_doc["name"],
         "result": yaml_doc["result"],
@@ -110,7 +113,7 @@ def main(tmt_basedir, tmt_run_id, just_file_paths, log_type):
 
     result_data = []
     for result_yaml_file in result_yaml_files:
-        result_data.append(parse_result_file(result_yaml_file))
+        result_data.append(parse_result_file(result_yaml_file, tmt_run_dir))
 
     if not just_file_paths:
         print("results:")
@@ -119,11 +122,12 @@ def main(tmt_basedir, tmt_run_id, just_file_paths, log_type):
     else:
         found_file_paths = []
         for result_data in result_data:
-            for log_file_path in result_data["logs"]:
+            for log_file_relative_path in result_data["logs"]:
                 if log_type is not None:
-                    basename = os.path.basename(log_file_path)
+                    basename = os.path.basename(log_file_relative_path)
                     if log_type != basename:
                         continue
+                log_file_path = os.path.join(tmt_run_dir, log_file_relative_path)
                 found_file_paths.append(log_file_path)
         for found_file_path in found_file_paths:
             print(found_file_path, flush=True)

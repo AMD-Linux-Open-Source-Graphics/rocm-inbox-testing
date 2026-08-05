@@ -4,7 +4,7 @@ execute:
 discover:
   how: fmf
   test:
-    - rocfft/smoketest
+    - rocrand/selftest
 
 prepare:
   - how: install

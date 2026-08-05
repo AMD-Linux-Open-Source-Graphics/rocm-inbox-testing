@@ -66,7 +66,7 @@ supported_log_types = ["output.txt", "failures.yaml"]
 @click.command()
 @click.option(
     "--tmt_basedir",
-    default="/var/tmt/tmt",
+    default="/var/tmp/tmt",
     type=str,
     help="Base directory for TMT output files.",
 )

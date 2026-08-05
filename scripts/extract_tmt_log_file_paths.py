@@ -43,10 +43,17 @@ def parse_result_file(result_yaml_relative_path, tmt_run_dir):
 
     yaml_doc = yaml_docs[0]
 
+    # the actual path to log files is not available in a way that makes finding it easy at this point
+    # reconstruct the full path by using part of the result.yaml and the base tmt run dir
+    plan_execution_path_extract = os.path.normpath(result_yaml_path).split(os.sep)[-4:-1]
+    log_basedir = os.path.join(tmt_run_dir, *plan_execution_path_extract)
+    full_log_paths = []
+    for log_path in yaml_doc["log"]:
+        full_log_paths.append(os.path.join(log_basedir, log_path))
 
     return {
         "base_dir": tmt_run_dir,
-        "logs": yaml_doc["log"],
+        "logs": full_log_paths,
         "name": yaml_doc["name"],
         "result": yaml_doc["result"],
         "data_path": yaml_doc["data-path"],

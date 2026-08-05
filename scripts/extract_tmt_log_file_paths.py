@@ -6,7 +6,7 @@ import os
 from pprint import pprint
 
 import click
-import yaml
+from ruamel.yaml import YAML
 
 """
 The purpose of this script is to find log files from a tmt output directory so that they can be archived individually.
@@ -36,8 +36,9 @@ def find_plan_execute_result_files(tmt_run_dir):
 
 
 def parse_result_file(result_yaml_file_path):
+    yaml = YAML(typ="safe")
     with open(result_yaml_file_path, "r") as f:
-        yaml_docs = yaml.safe_load(f)
+        yaml_docs = yaml.load(f)
 
     yaml_doc = yaml_docs[0]
 

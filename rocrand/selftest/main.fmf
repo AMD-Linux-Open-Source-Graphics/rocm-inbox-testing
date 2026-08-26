@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: MIT
 
 summary: upstream test suite for rocrand
-test: testrig check && testrig run
+test: testrig check && testrig --file-output run
 framework: shell
 duration: 60m
 contact: Tim Flink <Tim.Flink@amd.com>

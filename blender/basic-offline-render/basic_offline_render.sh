@@ -13,7 +13,9 @@ set -e
 
 # ensure packages are installed
 apt-get update
-apt-get install -y blender wget unzip hipcc
+
+# for recent ROCm (7.14+) on Ubuntu, use hipcc-rocm instead of hipcc
+apt-get install -y blender wget unzip hipcc-rocm
 
 if [ ! -e classroom.zip ]; then
     echo "Downloading classroom.zip to $(pwd)"

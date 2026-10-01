@@ -4,4 +4,4 @@ execute:
 discover:
   how: fmf
   test:
-    - rocrand/selftest
+    - rocr-runtime/selftest

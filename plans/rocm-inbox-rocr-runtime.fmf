@@ -4,4 +4,4 @@ execute:
 discover:
   how: fmf
   test:
-    - rocr-runtime/selftest
+    - rocr-runtime/kfdtest

@@ -10,3 +10,4 @@ extra_args = []
 test_package_name = "libmiopen1-tests"
 test_debug_package_names = ["libmiopen1-tests-dbgsym", "libmiopen1-dbgsym", "libhsa-runtime64-1-dbgsym", "libamdhip64-7-dbgsym", "libamd-comgr3-dbgsym"]
 test_binary_path = "/usr/libexec/rocm/libmiopen1-tests/"
+test_binaries = ["run-tests"]

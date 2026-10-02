@@ -11,11 +11,43 @@ set -e
 # code from blender means PASSED
 ################################################################################
 
-# ensure packages are installed
-apt-get update
+# the hipcc-rocm package (using the amd fork of clang) is required for recent ROCm builds on Ubuntu
+# right now, that is 26.10 and later (ROCm 7.14+)
+install_apt_amdclang ()
+{
+    echo "Installing dependencies for ROCm built with amdclang"
+    apt-get install -y blender wget unzip build-essential hipcc-rocm
+}
 
-# for recent ROCm (7.14+) on Ubuntu, use hipcc-rocm instead of hipcc
-apt-get install -y blender wget unzip hipcc-rocm
+# hipcc uses system clang and is appropriate for older Ubuntu versions (26.04 and earlier) and Debian
+install_apt_systemclang ()
+{
+    echo "Installing dependencies for ROCm built with systemclang"
+    apt-get install -y blender wget unzip hipcc
+}
+
+# detect OS
+. /etc/os-release
+
+
+case "$ID" in
+    ubuntu)
+        # ensure that metadata is up to date
+        apt-get update
+
+        # handle dependencies per release
+        if [ "$VERSION_ID" = "26.04" ]; then
+            install_apt_systemclang
+        else
+            install_apt_amdclang
+        fi
+        ;;
+    *)
+        echo "Unsupported OS: $ID"
+        exit 1
+        ;;
+esac
+
 
 if [ ! -e classroom.zip ]; then
     echo "Downloading classroom.zip to $(pwd)"

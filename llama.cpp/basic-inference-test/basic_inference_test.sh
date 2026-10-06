@@ -10,6 +10,7 @@ set -e
 # better feature set that does things like check the output for reasonable-ness
 ################################################################################
 
+apt-get update
 apt-get install -y llama.cpp libggml0-backend-hip
 
 llama-cli -st -hf ggml-org/gemma-3-1b-it-GGUF -p "If this is working, please output the exact phrase 'this appears to be working'"

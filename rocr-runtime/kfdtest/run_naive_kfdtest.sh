@@ -11,6 +11,8 @@
 
 ROCR_RUNTIME_BRANCH="release/rocm-rel-7.1"
 
+apt-get update
+
 # install the prerequisites
 apt-get install -y libhsa-runtime-dev libhsakmt-dev libdrm-dev libnuma-dev cmake build-essential hipcc pkg-config
 

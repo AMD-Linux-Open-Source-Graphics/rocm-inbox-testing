@@ -1,0 +1,5 @@
+Types: deb
+URIs: http://ddebs.ubuntu.com/
+Suites: stonking stonking-updates stonking-proposed 
+Components: main restricted universe multiverse
+Signed-by: /usr/share/keyrings/ubuntu-dbgsym-keyring.gpg

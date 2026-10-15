@@ -10,15 +10,15 @@ LABEL org.opencontainers.image.authors="Tim.Flink@amd.com"
 # enable any extra repos
 ############################################################
 
-# these repos are ppas that tend to contain pre-release rocm pacakges. enable if needed
-#COPY containers/bullwinkle-team-ubuntu-rocm-devel-resolute.sources /etc/apt/sources.list.d/bullwinkle-team-ubuntu-rocm-devel-resolute.sources
-#COPY containers/bullwinkle-team-ubuntu-rocm-devel-21-resolute.sources /etc/apt/sources.list.d/bullwinkle-team-ubuntu-rocm-devel-21-resolute.sources
+# this PPA has tools like fmf, tmt and testrig
+COPY tflink-ubuntu-rocm-inbox-testing-tools-resolute.sources /etc/apt/sources.list.d/tflink-ubuntu-rocm-inbox-testing-tools-resolute.sources
 
 ############################################################
 # add proposed to the repo config
 ############################################################
 
 RUN sed -i 's/resolute-backports/resolute-backports resolute-proposed/' /etc/apt/sources.list.d/ubuntu.sources
+
 
 ############################################################
 # make sure that pending and the PPA are higher priority
@@ -42,16 +42,22 @@ COPY resolute-ddebs.list /etc/apt/sources.list.d/ddebs.sources
 RUN echo "updating apt metadata with debug"; apt-get update
 
 ############################################################
-# just install rocminfo, any other test packages will be installed later
+# just install base tools
 ############################################################
 
-RUN echo "installing rocm tools"; apt-get install -y rocminfo
+RUN echo "installing base tools"; apt-get install -y rocminfo gdb tmt testrig
+
+############################################################
+# add root to render and video groups for DRM access
+############################################################
+
+RUN usermod -a -G video root
 
 ############################################################
 # clean metadata to keep size down
 ############################################################
 
-RUN echo "cleaning apt metadata"; apt-get clean
+RUN echo "cleaning apt metadata"; apt-get clean && rm -rf /var/lib/apt/lists/*
 
 CMD ["/usr/bin/bash"]
 

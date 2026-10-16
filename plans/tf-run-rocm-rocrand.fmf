@@ -4,6 +4,7 @@ execute:
 provision:
   how: container
   image: docker.io/tflink/rocm-inbox-testing-fedora-base:rawhide
+  force-pull: true
   expose-device:
     - /dev/dri
     - /dev/kfd

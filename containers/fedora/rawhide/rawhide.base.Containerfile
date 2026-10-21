@@ -11,5 +11,7 @@ RUN echo "Enable rocm testing COPR"; dnf -y copr enable @rocm-packagers-sig/rocm
 
 RUN echo "Install testing tools"; dnf -y install testrig tmt gdb
 
+COPY testrig.settings.toml /etc/testrig/settings.toml
+
 CMD ["/usr/bin/bash"]
 

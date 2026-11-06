@@ -6,7 +6,7 @@
 summary: upstream test suite for rocfft
 test: testrig check && testrig run
 framework: shell
-duration: 4h
+duration: 5h
 contact: Tim Flink <Tim.Flink@amd.com>
 tag:
   - rocfft

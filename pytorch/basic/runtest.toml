@@ -1,0 +1,20 @@
+# Copyright Advanced Micro Devices, Inc.
+#
+# SPDX-License-Identifier: MIT
+
+name = "pytorch"
+supported_isas = [1201]
+extra_args = []
+results = "junit"
+
+[fedora]
+runner = "script"
+interpreter = "python3 -m pytest -p no:cacheprovider --junitxml={results_file}"
+tests = ["basic_pytorch.py"]
+test_packages = ["python3-pytest", "python3-torch"]
+
+[ubuntu]
+runner = "script"
+interpreter = "python3 -m pytest -p no:cacheprovider --junitxml={results_file}"
+tests = ["basic_pytorch.py"]
+test_packages = ["python3-pytest", "python3-torch-rocm"]

@@ -9,7 +9,7 @@ In order to run the tests in this repository, the following tools are required i
 
  * [tmt](https://github.com/teemtee/tmt)
  * [fmf](https://github.com/teemtee/fmf)
- * [testrig](https://github.com/AMD-Linux-Open-Source-Graphics/testrig) (>= 0.0.7)
+ * [testrig](https://github.com/AMD-Linux-Open-Source-Graphics/testrig) (>= 0.0.10)
 
 ## Running tests
 
@@ -23,7 +23,7 @@ podman run --rm -it --privileged --device /dev/kfd --device /dev/dri --security-
 
 To run the tests directly, use `tmt`
 ```
-tmt run test -f tag:selftests provision -h local --feeling-safe discover -h fmf execute -h tmt
+tmt --allow-unsafe-behavior=provision/local run test -f tag:selftests provision -h local discover -h fmf execute -h tmt
 ```
 
 To use the included `run_tests.sh` wrapper with a test tag (see `.fmf` files to see the existing tags):

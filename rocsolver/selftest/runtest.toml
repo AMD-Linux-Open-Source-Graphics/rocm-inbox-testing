@@ -3,10 +3,8 @@
 # SPDX-License-Identifier: MIT
 
 name = "rocSOLVER"
-interface = "gtest"
 supported_isas = [1201]
 extra_args = []
-binary_name = "rocsolver-test"
 
 [ubuntu]
 test_package_name = "librocsolver0-tests"
